@@ -1,0 +1,2958 @@
+{
+  "code": "01",
+  "status": true,
+  "message": "Success",
+  "data": [
+    {
+      "idHeader": "1",
+      "label": "Profil Pelaku Usaha",
+      "imgActive": "ImgProfilePelakuUsahaActive",
+      "imgInactive": "ImgProfilePelakuUsaha",
+      "isSubheader": true,
+      "headerMenu": [
+        {
+          "idForm": "1",
+          "idTemplate": "1",
+          "idSubHeader": "1",
+          "idElement": "1",
+          "isSubheader": true,
+          "label": "Pelaku Usaha",
+          "icon": null,
+          "idLevel": "4",
+          "levelJson": {
+            "idLevel": 4,
+            "idLevelParent": "1",
+            "nmLevel": "Pelaku Usaha",
+            "key": "pelaku_usaha",
+            "tipeJson": "object",
+            "kd_layanan": "0101013"
+          },
+          "content": [
+            {
+              "idElement": "1",
+              "idElementParent": null,
+              "component": "Form",
+              "props": {
+                "whenCallInitFunc": "1",
+                "function": ["form-onSubmit-post"],
+                "initFunc": [
+                  {
+                    "idApi": "1",
+                    "idElementApi": "1",
+                    "url": "registrasiBackup/getOneNibHdr",
+                    "idMethod": "1",
+                    "method": "GET",
+                    "params": {
+                      "id_nib": "60506"
+                    },
+                    "toData": [
+                      "nib",
+                      "npwp_perseroan",
+                      "nama_perseroan",
+                      "NamaProvinsi",
+                      "NamaKota",
+                      "NamaKecamatan",
+                      "Namakelurahan",
+                      "rt_rw_perseroan",
+                      "kode_pos_perseroan",
+                      "nomor_telpon_perseroan",
+                      "email_user_proses",
+                      "alamat_perseroan"
+                    ],
+                    "returnData": "data"
+                  },
+                  {
+                    "idApi": "2",
+                    "idElementApi": "2",
+                    "url": "ssmperijinan/siinas/check-user",
+                    "idMethod": "2",
+                    "method": "POST",
+                    "params": {
+                      "user": "unichem-candi",
+                      "nib": ":nib",
+                      "npwp": ":npwp_perseroan"
+                    },
+                    "toData": ["nomor_tdp"],
+                    "returnData": "response.data.document"
+                  },
+                  {
+                    "idApi": "3",
+                    "idElementApi": "3",
+                    "url": "ssmperijinan/siinas/check-user",
+                    "idMethod": "2",
+                    "method": "POST",
+                    "params": {
+                      "user": "unichem-candi",
+                      "nib": ":nib",
+                      "npwp": ":npwp_perseroan"
+                    },
+                    "toData": ["alamatPabrik"],
+                    "returnData": "response.data"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "idElement": "2",
+                  "idElementParent": "1",
+                  "component": "Row",
+                  "props": null,
+                  "children": [
+                    {
+                      "idElement": "3",
+                      "idElementParent": "2",
+                      "component": "Col",
+                      "props": {
+                        "sm": "3"
+                      },
+                      "children": [
+                        {
+                          "idElement": "4",
+                          "idElementParent": "3",
+                          "component": "Label",
+                          "props": {
+                            "for": "nib"
+                          },
+                          "children": "NIB"
+                        },
+                        {
+                          "idElement": "5",
+                          "idElementParent": "3",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "nib",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "6",
+                      "idElementParent": "2",
+                      "component": "Col",
+                      "props": {
+                        "sm": "3"
+                      },
+                      "children": [
+                        {
+                          "idElement": "7",
+                          "idElementParent": "6",
+                          "component": "Label",
+                          "props": {
+                            "for": "npwp_perseroan"
+                          },
+                          "children": "NPWP"
+                        },
+                        {
+                          "idElement": "8",
+                          "idElementParent": "6",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "npwp_perseroan",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "9",
+                      "idElementParent": "2",
+                      "component": "Col",
+                      "props": {
+                        "sm": "6"
+                      },
+                      "children": [
+                        {
+                          "idElement": "10",
+                          "idElementParent": "9",
+                          "component": "Label",
+                          "props": {
+                            "for": "nama_perseroan"
+                          },
+                          "children": "Nama Perusahaan"
+                        },
+                        {
+                          "idElement": "11",
+                          "idElementParent": "9",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "nama_perseroan",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "12",
+                  "idElementParent": "1",
+                  "component": "Row",
+                  "props": null,
+                  "children": [
+                    {
+                      "idElement": "13",
+                      "idElementParent": "12",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "14",
+                          "idElementParent": "13",
+                          "component": "Label",
+                          "props": {
+                            "for": "NamaProvinsi"
+                          },
+                          "children": "Provinsi"
+                        },
+                        {
+                          "idElement": "15",
+                          "idElementParent": "13",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "NamaProvinsi",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "16",
+                      "idElementParent": "12",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "17",
+                          "idElementParent": "16",
+                          "component": "Label",
+                          "props": {
+                            "for": "NamaKota"
+                          },
+                          "children": "Kota / Kabupaten"
+                        },
+                        {
+                          "idElement": "18",
+                          "idElementParent": "16",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "NamaKota",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "19",
+                      "idElementParent": "12",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "20",
+                          "idElementParent": "19",
+                          "component": "Label",
+                          "props": {
+                            "for": "NamaKecamatan"
+                          },
+                          "children": "Kecamatan"
+                        },
+                        {
+                          "idElement": "21",
+                          "idElementParent": "19",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "NamaKecamatan",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "22",
+                      "idElementParent": "12",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "23",
+                          "idElementParent": "22",
+                          "component": "Label",
+                          "props": {
+                            "for": "Namakelurahan"
+                          },
+                          "children": "Kelurahan"
+                        },
+                        {
+                          "idElement": "24",
+                          "idElementParent": "22",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "Namakelurahan",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": true
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "25",
+                  "idElementParent": "1",
+                  "component": "Row",
+                  "props": null,
+                  "children": [
+                    {
+                      "idElement": "26",
+                      "idElementParent": "25",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "27",
+                          "idElementParent": "26",
+                          "component": "Row",
+                          "props": null,
+                          "children": [
+                            {
+                              "idElement": "28",
+                              "idElementParent": "27",
+                              "component": "Col",
+                              "props": null,
+                              "children": [
+                                {
+                                  "idElement": "29",
+                                  "idElementParent": "28",
+                                  "component": "Label",
+                                  "props": {
+                                    "for": "rt_rw_perseroan"
+                                  },
+                                  "children": "RT/RW"
+                                },
+                                {
+                                  "idElement": "30",
+                                  "idElementParent": "28",
+                                  "component": "Input",
+                                  "props": {
+                                    "type": "text",
+                                    "name": "rt_rw_perseroan",
+                                    "readOnly": true,
+                                    "rows": null,
+                                    "key": "pelaku_usaha",
+                                    "onLoadOption": null,
+                                    "sendValueTo": null,
+                                    "function": null,
+                                    "isRequired": false
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "idElement": "31",
+                              "idElementParent": "27",
+                              "component": "Col",
+                              "props": null,
+                              "children": [
+                                {
+                                  "idElement": "32",
+                                  "idElementParent": "31",
+                                  "component": "Label",
+                                  "props": {
+                                    "for": "kode_pos_perseroan"
+                                  },
+                                  "children": "Kode POS"
+                                },
+                                {
+                                  "idElement": "33",
+                                  "idElementParent": "31",
+                                  "component": "Input",
+                                  "props": {
+                                    "type": "text",
+                                    "name": "kode_pos_perseroan",
+                                    "readOnly": true,
+                                    "rows": null,
+                                    "key": "pelaku_usaha",
+                                    "onLoadOption": null,
+                                    "sendValueTo": null,
+                                    "function": null,
+                                    "isRequired": false
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "idElement": "86",
+                          "idElementParent": "26",
+                          "component": "Row",
+                          "props": null,
+                          "children": [
+                            {
+                              "idElement": "34",
+                              "idElementParent": "86",
+                              "component": "Col",
+                              "props": null,
+                              "children": [
+                                {
+                                  "idElement": "35",
+                                  "idElementParent": "34",
+                                  "component": "Label",
+                                  "props": {
+                                    "for": "nomor_telpon_perseroan"
+                                  },
+                                  "children": "Telephone"
+                                },
+                                {
+                                  "idElement": "36",
+                                  "idElementParent": "34",
+                                  "component": "Input",
+                                  "props": {
+                                    "type": "text",
+                                    "name": "nomor_telpon_perseroan",
+                                    "readOnly": true,
+                                    "rows": null,
+                                    "key": "pelaku_usaha",
+                                    "onLoadOption": null,
+                                    "sendValueTo": null,
+                                    "function": null,
+                                    "isRequired": false
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "idElement": "87",
+                              "idElementParent": "86",
+                              "component": "Col",
+                              "props": null,
+                              "children": [
+                                {
+                                  "idElement": "38",
+                                  "idElementParent": "87",
+                                  "component": "Label",
+                                  "props": {
+                                    "for": "email_user_proses"
+                                  },
+                                  "children": "E-Mail"
+                                },
+                                {
+                                  "idElement": "39",
+                                  "idElementParent": "87",
+                                  "component": "Input",
+                                  "props": {
+                                    "type": "text",
+                                    "name": "email_user_proses",
+                                    "readOnly": true,
+                                    "rows": null,
+                                    "key": "pelaku_usaha",
+                                    "onLoadOption": null,
+                                    "sendValueTo": null,
+                                    "function": null,
+                                    "isRequired": false
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "40",
+                      "idElementParent": "25",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "41",
+                          "idElementParent": "40",
+                          "component": "Label",
+                          "props": {
+                            "for": "alamat_perseroan"
+                          },
+                          "children": "Alamat"
+                        },
+                        {
+                          "idElement": "42",
+                          "idElementParent": "40",
+                          "component": "Input",
+                          "props": {
+                            "type": "textarea",
+                            "name": "alamat_perseroan",
+                            "readOnly": true,
+                            "rows": "4",
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "55",
+                  "idElementParent": "1",
+                  "component": "Row",
+                  "props": null,
+                  "children": [
+                    {
+                      "idElement": "56",
+                      "idElementParent": "55",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "57",
+                          "idElementParent": "56",
+                          "component": "Label",
+                          "props": {
+                            "for": "nomor_tdp"
+                          },
+                          "children": "Nomor TDP atau TDI"
+                        },
+                        {
+                          "idElement": "58",
+                          "idElementParent": "56",
+                          "component": "Select",
+                          "props": {
+                            "type": "text",
+                            "name": "nomor_tdp",
+                            "readOnly": false,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": ["tanggal_as_tanggal_tdp"],
+                            "function": [
+                              "input-getOptionLabel-nomor",
+                              "input-getOptionValue-nomor",
+                              "input-onChange-onChangeSelect"
+                            ],
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "59",
+                      "idElementParent": "55",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "60",
+                          "idElementParent": "59",
+                          "component": "Label",
+                          "props": {
+                            "for": "tanggal_tdp"
+                          },
+                          "children": "Tanggal Daftar TDP atau TDI"
+                        },
+                        {
+                          "idElement": "61",
+                          "idElementParent": "59",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "tanggal_tdp",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "62",
+                      "idElementParent": "55",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "63",
+                          "idElementParent": "62",
+                          "component": "Label",
+                          "props": {
+                            "for": "nomor_iui"
+                          },
+                          "children": "Nomor IUI"
+                        },
+                        {
+                          "idElement": "64",
+                          "idElementParent": "62",
+                          "component": "Select",
+                          "props": {
+                            "type": "select",
+                            "name": "nomor_iui",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": ["tanggal_as_tanggal_iui"],
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "65",
+                      "idElementParent": "55",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "66",
+                          "idElementParent": "65",
+                          "component": "Label",
+                          "props": {
+                            "for": "tanggal_iui"
+                          },
+                          "children": "Tanggal IUI"
+                        },
+                        {
+                          "idElement": "67",
+                          "idElementParent": "65",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "tanggal_iui",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "68",
+                  "idElementParent": "1",
+                  "component": "Row",
+                  "props": null,
+                  "children": [
+                    {
+                      "idElement": "69",
+                      "idElementParent": "68",
+                      "component": "Col",
+                      "props": {
+                        "sm": "3"
+                      },
+                      "children": [
+                        {
+                          "idElement": "70",
+                          "idElementParent": "69",
+                          "component": "Label",
+                          "props": {
+                            "for": "nomor_api"
+                          },
+                          "children": "Nomor API"
+                        },
+                        {
+                          "idElement": "71",
+                          "idElementParent": "69",
+                          "component": "Select",
+                          "props": {
+                            "type": "text",
+                            "name": "nomor_api",
+                            "readOnly": false,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "72",
+                      "idElementParent": "68",
+                      "component": "Col",
+                      "props": {
+                        "sm": "3"
+                      },
+                      "children": [
+                        {
+                          "idElement": "73",
+                          "idElementParent": "72",
+                          "component": "Label",
+                          "props": {
+                            "for": "tanggal_api"
+                          },
+                          "children": "Tanggal API"
+                        },
+                        {
+                          "idElement": "74",
+                          "idElementParent": "72",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "tanggal_api",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "75",
+                      "idElementParent": "68",
+                      "component": "Col",
+                      "props": {
+                        "sm": "6"
+                      },
+                      "children": [
+                        {
+                          "idElement": "76",
+                          "idElementParent": "75",
+                          "component": "Label",
+                          "props": {
+                            "for": "jenis_api"
+                          },
+                          "children": "Jenis API"
+                        },
+                        {
+                          "idElement": "77",
+                          "idElementParent": "75",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "jenis_api",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "78",
+                  "idElementParent": "1",
+                  "component": "Button",
+                  "props": {
+                    "type": "submit",
+                    "positionGravity": "right",
+                    "color": "primary"
+                  },
+                  "children": "Simpan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "idForm": "2",
+          "idTemplate": "1",
+          "idSubHeader": "2",
+          "idElement": "43",
+          "isSubheader": true,
+          "label": "Umum",
+          "icon": null,
+          "idLevel": "5",
+          "levelJson": {
+            "idLevel": 5,
+            "idLevelParent": "1",
+            "nmLevel": "Umum",
+            "key": "umum",
+            "tipeJson": "object",
+            "kd_layanan": "0101013"
+          },
+          "content": [
+            {
+              "idElement": "43",
+              "idElementParent": null,
+              "component": "Form",
+              "props": {
+                "whenCallInitFunc": "2",
+                "function": ["form-onSubmit-put"],
+                "initFunc": [
+                  {
+                    "idApi": "4",
+                    "idElementApi": "4",
+                    "url": "registrasi/getAllPgjwb",
+                    "idMethod": "1",
+                    "method": "GET",
+                    "params": {
+                      "id_nib": "60506"
+                    },
+                    "toData": ["nama_penanggung_jwb"],
+                    "returnData": "data"
+                  },
+                  {
+                    "idApi": "5",
+                    "idElementApi": "5",
+                    "url": "https://api.insw.go.id/api/data-dynamic/get",
+                    "idMethod": "1",
+                    "method": "GET",
+                    "params": {
+                      "id_permohonan": ":idPermohonan",
+                      "id_level": "14",
+                      "id_pengajuan": ":idPengajuan"
+                    },
+                    "toData": ["contact_person"],
+                    "returnData": "data"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "idElement": "44",
+                  "idElementParent": "43",
+                  "component": "Row",
+                  "props": null,
+                  "children": [
+                    {
+                      "idElement": "45",
+                      "idElementParent": "44",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "46",
+                          "idElementParent": "45",
+                          "component": "Label",
+                          "props": {
+                            "for": "nama_pemohon"
+                          },
+                          "children": "Nama Pemohon"
+                        },
+                        {
+                          "idElement": "47",
+                          "idElementParent": "45",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "nama_pemohon",
+                            "readOnly": false,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": ["input-onChange-onChangeText"],
+                            "isRequired": true
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "48",
+                      "idElementParent": "44",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "49",
+                          "idElementParent": "48",
+                          "component": "Label",
+                          "props": {
+                            "for": "jabatan_pemohon"
+                          },
+                          "children": "Jabatan Pemohon"
+                        },
+                        {
+                          "idElement": "50",
+                          "idElementParent": "48",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "jabatan_pemohon",
+                            "readOnly": false,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": ["input-onChange-onChangeText"],
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "51",
+                      "idElementParent": "44",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "52",
+                          "idElementParent": "51",
+                          "component": "Label",
+                          "props": {
+                            "for": "nomor_surat_pemohon"
+                          },
+                          "children": "Nomor Surat Permohonan"
+                        },
+                        {
+                          "idElement": "53",
+                          "idElementParent": "51",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "nomor_surat_pemohon",
+                            "readOnly": false,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": ["input-onChange-onChangeText"],
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "88",
+                      "idElementParent": "44",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "89",
+                          "idElementParent": "88",
+                          "component": "Label",
+                          "props": {
+                            "for": "tanggal_permohonan"
+                          },
+                          "children": "Tanggal"
+                        },
+                        {
+                          "idElement": "90",
+                          "idElementParent": "88",
+                          "component": "Date",
+                          "props": {
+                            "type": "date",
+                            "name": "tanggal_permohonan",
+                            "readOnly": false,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": ["input-onChange-onChangeDate"],
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "91",
+                  "idElementParent": "43",
+                  "component": "Row",
+                  "props": null,
+                  "children": [
+                    {
+                      "idElement": "92",
+                      "idElementParent": "91",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "94",
+                          "idElementParent": "92",
+                          "component": "Label",
+                          "props": {
+                            "for": "alamat_perseroan_as_alamatKantor"
+                          },
+                          "children": "Alamat Kantor"
+                        },
+                        {
+                          "idElement": "95",
+                          "idElementParent": "92",
+                          "component": "Input",
+                          "props": {
+                            "type": "textarea",
+                            "name": "alamat_perseroan_as_alamatKantor",
+                            "readOnly": true,
+                            "rows": "4",
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "93",
+                      "idElementParent": "91",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "96",
+                          "idElementParent": "93",
+                          "component": "Label",
+                          "props": {
+                            "for": "alamatPabrik"
+                          },
+                          "children": "Alamat Pabrik"
+                        },
+                        {
+                          "idElement": "97",
+                          "idElementParent": "93",
+                          "component": "Input",
+                          "props": {
+                            "type": "textarea",
+                            "name": "alamatPabrik",
+                            "readOnly": true,
+                            "rows": "4",
+                            "key": "pelaku_usaha",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "107",
+                  "idElementParent": "43",
+                  "component": "Table",
+                  "tableName": "Contact Person",
+                  "idLevel": "14",
+                  "props": {
+                    "keyField": "idKontak",
+                    "bordered": false,
+                    "name": "contact_person",
+                    "isCarousel": false,
+                    "isCreate": true,
+                    "actionHeader": [
+                      {
+                        "icon": "fa-plus",
+                        "size": "lg",
+                        "text": null,
+                        "type": 1,
+                        "color": "green",
+                        "title": "Tambah Kontak",
+                        "iconOnly": true,
+                        "openModal": true
+                      }
+                    ],
+                    "actionColumn": [
+                      {
+                        "icon": "fa-pencil",
+                        "size": "lg",
+                        "text": null,
+                        "type": 2,
+                        "color": "blue",
+                        "title": "Edit Kontak",
+                        "iconOnly": true,
+                        "openModal": true
+                      },
+                      {
+                        "icon": "fa-trash",
+                        "type": 3,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "idColumnMap": "1",
+                      "idElement": "107",
+                      "idColumnList": "1",
+                      "headerTitle": "No",
+                      "dataField": "no",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": ["table-dataFormat-increment"]
+                    },
+                    {
+                      "idColumnMap": "2",
+                      "idElement": "107",
+                      "idColumnList": "2",
+                      "headerTitle": "Nama",
+                      "dataField": "namaKontak",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": "300",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "3",
+                      "idElement": "107",
+                      "idColumnList": "3",
+                      "headerTitle": "Jabatan",
+                      "dataField": "jabatanKontak",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": null,
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "4",
+                      "idElement": "107",
+                      "idColumnList": "4",
+                      "headerTitle": "Nomor HP",
+                      "dataField": "nomorKontak",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": null,
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "5",
+                      "idElement": "107",
+                      "idColumnList": "5",
+                      "headerTitle": "Email",
+                      "dataField": "emailKontak",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": null,
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "6",
+                      "idElement": "107",
+                      "idColumnList": "6",
+                      "headerTitle": "Aksi",
+                      "dataField": "id",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": null,
+                      "function": ["table-dataFormat-actionButton"]
+                    }
+                  ],
+                  "contentModal": [
+                    {
+                      "idElement": "128",
+                      "idElementParent": "107",
+                      "component": "Modal",
+                      "props": {
+                        "flagMenu": true
+                      },
+                      "children": [
+                        {
+                          "idElement": "144",
+                          "idElementParent": "128",
+                          "component": "Modal Menu",
+                          "props": {
+                            "labelMenu": "Menu Modal 1"
+                          },
+                          "children": [
+                            {
+                              "idElement": "145",
+                              "idElementParent": "144",
+                              "component": "Form",
+                              "props": {
+                                "whenCallInitFunc": null,
+                                "function": ["form-onSubmit-modal"],
+                                "initFunc": null
+                              },
+                              "children": [
+                                {
+                                  "idElement": "129",
+                                  "idElementParent": "145",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "130",
+                                      "idElementParent": "129",
+                                      "component": "Col",
+                                      "props": {
+                                        "isRequired": true
+                                      },
+                                      "children": [
+                                        {
+                                          "idElement": "132",
+                                          "idElementParent": "130",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "namaKontak"
+                                          },
+                                          "children": "Nama"
+                                        },
+                                        {
+                                          "idElement": "133",
+                                          "idElementParent": "130",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "namaKontak",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-onChange-onChangeTextModal"
+                                            ],
+                                            "required": true
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "idElement": "131",
+                                      "idElementParent": "129",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "134",
+                                          "idElementParent": "131",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "jabatanKontak"
+                                          },
+                                          "children": "Jabatan"
+                                        },
+                                        {
+                                          "idElement": "135",
+                                          "idElementParent": "131",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "jabatanKontak",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-onChange-onChangeTextModal"
+                                            ],
+                                            "isRequired": false
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "136",
+                                  "idElementParent": "145",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "137",
+                                      "idElementParent": "136",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "139",
+                                          "idElementParent": "137",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "nomorKontak"
+                                          },
+                                          "children": "Nomor Telepon"
+                                        },
+                                        {
+                                          "idElement": "140",
+                                          "idElementParent": "137",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "nomorKontak",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-onChange-onChangeTelpModal"
+                                            ],
+                                            "isRequired": false
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "idElement": "138",
+                                      "idElementParent": "136",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "141",
+                                          "idElementParent": "138",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "emailKontak"
+                                          },
+                                          "children": "Email"
+                                        },
+                                        {
+                                          "idElement": "142",
+                                          "idElementParent": "138",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "email",
+                                            "name": "emailKontak",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-onChange-onChangeTextModal"
+                                            ],
+                                            "isRequired": false
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "143",
+                                  "idElementParent": "145",
+                                  "component": "Button",
+                                  "props": {
+                                    "type": "submit",
+                                    "positionGravity": "right",
+                                    "color": "primary"
+                                  },
+                                  "children": "Simpan"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "111",
+                  "idElementParent": "43",
+                  "component": "h5",
+                  "props": null,
+                  "children": "Narahubung"
+                },
+                {
+                  "idElement": "127",
+                  "idElementParent": "43",
+                  "component": "Row",
+                  "props": null,
+                  "children": [
+                    {
+                      "idElement": "112",
+                      "idElementParent": "127",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "113",
+                          "idElementParent": "112",
+                          "component": "Label",
+                          "props": {
+                            "for": "nama_penanggung_jwb"
+                          },
+                          "children": "Nama"
+                        },
+                        {
+                          "idElement": "114",
+                          "idElementParent": "112",
+                          "component": "Select",
+                          "props": {
+                            "type": "select",
+                            "name": "nama_penanggung_jwb",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": [
+                              "no_identitas_penanggung_jwb",
+                              "jabatan_penanggung_jwb",
+                              "no_hp_penanggung_jwb",
+                              "email_penanggung_jwb"
+                            ],
+                            "function": [
+                              "input-getOptionLabel-nama_penanggung_jwb",
+                              "input-getOptionValue-nama_penanggung_jwb",
+                              "input-onChange-onChangeSelect"
+                            ],
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "115",
+                      "idElementParent": "127",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "116",
+                          "idElementParent": "115",
+                          "component": "Label",
+                          "props": {
+                            "for": "no_identitas_penanggung_jwb"
+                          },
+                          "children": "Nomor Identitas"
+                        },
+                        {
+                          "idElement": "117",
+                          "idElementParent": "115",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "no_identitas_penanggung_jwb",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "118",
+                      "idElementParent": "127",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "119",
+                          "idElementParent": "118",
+                          "component": "Label",
+                          "props": {
+                            "for": "jabatan_penanggung_jwb"
+                          },
+                          "children": "Jabatan"
+                        },
+                        {
+                          "idElement": "120",
+                          "idElementParent": "118",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "jabatan_penanggung_jwb",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "121",
+                      "idElementParent": "127",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "122",
+                          "idElementParent": "121",
+                          "component": "Label",
+                          "props": {
+                            "for": "no_hp_penanggung_jwb"
+                          },
+                          "children": "No Ponsel"
+                        },
+                        {
+                          "idElement": "123",
+                          "idElementParent": "121",
+                          "component": "Input",
+                          "props": {
+                            "type": "text",
+                            "name": "no_hp_penanggung_jwb",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idElement": "124",
+                      "idElementParent": "127",
+                      "component": "Col",
+                      "props": null,
+                      "children": [
+                        {
+                          "idElement": "125",
+                          "idElementParent": "124",
+                          "component": "Label",
+                          "props": {
+                            "for": "email_penanggung_jwb"
+                          },
+                          "children": "Email"
+                        },
+                        {
+                          "idElement": "126",
+                          "idElementParent": "124",
+                          "component": "Input",
+                          "props": {
+                            "type": "email",
+                            "name": "email_penanggung_jwb",
+                            "readOnly": true,
+                            "rows": null,
+                            "key": "umum",
+                            "onLoadOption": null,
+                            "sendValueTo": null,
+                            "function": null,
+                            "isRequired": false
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idElement": "219",
+                  "idElementParent": "43",
+                  "component": "Button",
+                  "props": {
+                    "type": "submit",
+                    "positionGravity": "right",
+                    "color": "primary"
+                  },
+                  "children": "Simpan"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idHeader": "2",
+      "label": "Data Komoditas",
+      "imgActive": "ImgKomoditasActive",
+      "imgInactive": "ImgKomoditas",
+      "isSubheader": true,
+      "headerMenu": [
+        {
+          "idForm": "3",
+          "idTemplate": "1",
+          "idSubHeader": "7",
+          "idElement": "146",
+          "isSubheader": true,
+          "label": "Barang",
+          "icon": null,
+          "idLevel": "6",
+          "levelJson": {
+            "idLevel": 6,
+            "idLevelParent": "2",
+            "nmLevel": "Barang",
+            "key": "barang",
+            "tipeJson": "array",
+            "kd_layanan": "0101013"
+          },
+          "content": [
+            {
+              "idElement": "146",
+              "idElementParent": null,
+              "component": "Form",
+              "props": {
+                "whenCallInitFunc": "7",
+                "function": ["form-onSubmit-put"],
+                "initFunc": [
+                  {
+                    "idApi": "12",
+                    "idElementApi": "7",
+                    "url": "https://api.insw.go.id/api/data-dynamic/get",
+                    "idMethod": "1",
+                    "method": "GET",
+                    "params": {
+                      "id_permohonan": ":idPermohonan",
+                      "id_level": "6",
+                      "id_pengajuan": ":idPengajuan"
+                    },
+                    "toData": ["barang"],
+                    "returnData": "data"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "idElement": "79",
+                  "idElementParent": "146",
+                  "component": "Table",
+                  "tableName": "Barang",
+                  "idLevel": "6",
+                  "props": {
+                    "keyField": "id",
+                    "bordered": false,
+                    "name": "barang",
+                    "isCarousel": false,
+                    "isCreate": true,
+                    "actionHeader": [
+                      {
+                        "icon": "fa-plus",
+                        "size": "xl",
+                        "text": null,
+                        "type": 1,
+                        "color": "green",
+                        "title": "Tambah Barang",
+                        "iconOnly": true,
+                        "openModal": true
+                      }
+                    ],
+                    "actionColumn": [
+                      {
+                        "icon": "fa-pencil",
+                        "size": "xl",
+                        "type": 2,
+                        "color": "blue",
+                        "title": "Edit Barang",
+                        "iconOnly": true,
+                        "openModal": true
+                      },
+                      {
+                        "icon": "fa-trash",
+                        "size": "xl",
+                        "type": 3,
+                        "color": "red",
+                        "title": "Hapus Barang",
+                        "iconOnly": true,
+                        "openModal": false
+                      }
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "idColumnMap": "7",
+                      "idElement": "79",
+                      "idColumnList": "7",
+                      "headerTitle": "No Urut",
+                      "dataField": "no_seri",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "8",
+                      "idElement": "79",
+                      "idColumnList": "8",
+                      "headerTitle": "Kode HS",
+                      "dataField": "hs_code.hs_code",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": null,
+                      "function": ["table-dataFormat-getObject"]
+                    },
+                    {
+                      "idColumnMap": "9",
+                      "idElement": "79",
+                      "idColumnList": "9",
+                      "headerTitle": "Uraian BTKI",
+                      "dataField": "uraian_btki",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": null,
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "10",
+                      "idElement": "79",
+                      "idColumnList": "10",
+                      "headerTitle": "Uraian Barang Permohonan",
+                      "dataField": "uraian_barang_permohonan",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": true,
+                      "width": null,
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "11",
+                      "idElement": "79",
+                      "idColumnList": "11",
+                      "headerTitle": "Uraian Barang Peraturan",
+                      "dataField": "uraian_barang_peraturan",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": true,
+                      "width": null,
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "12",
+                      "idElement": "79",
+                      "idColumnList": "12",
+                      "headerTitle": "Jumlah",
+                      "dataField": "jumlah",
+                      "headerAlign": "center",
+                      "dataAlign": "right",
+                      "wrapText": false,
+                      "width": null,
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "13",
+                      "idElement": "79",
+                      "idColumnList": "13",
+                      "headerTitle": "Satuan",
+                      "dataField": "kd_satuan",
+                      "headerAlign": "center",
+                      "dataAlign": "right",
+                      "wrapText": false,
+                      "width": null,
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "14",
+                      "idElement": "79",
+                      "idColumnList": "14",
+                      "headerTitle": "Aksi",
+                      "dataField": "id",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": null,
+                      "function": ["table-dataFormat-actionButton"]
+                    }
+                  ],
+                  "contentModal": [
+                    {
+                      "idElement": "147",
+                      "idElementParent": "79",
+                      "component": "Modal",
+                      "props": {
+                        "flagMenu": true
+                      },
+                      "children": [
+                        {
+                          "idElement": "148",
+                          "idElementParent": "147",
+                          "component": "Modal Menu",
+                          "props": {
+                            "labelMenu": "Barang"
+                          },
+                          "children": [
+                            {
+                              "idElement": "149",
+                              "idElementParent": "148",
+                              "component": "Form",
+                              "props": {
+                                "whenCallInitFunc": null,
+                                "function": ["form-onSubmit-modal"],
+                                "initFunc": [
+                                  {
+                                    "idApi": "10",
+                                    "idElementApi": "9",
+                                    "url": "ssmperijinan/dok/dokumen-rekomendasi/hs-code",
+                                    "idMethod": "1",
+                                    "method": "GET",
+                                    "params": {
+                                      "idDokumen": ":idDokumen"
+                                    },
+                                    "toData": ["hs_code"],
+                                    "returnData": "data"
+                                  },
+                                  {
+                                    "idApi": "8",
+                                    "idElementApi": "8",
+                                    "url": "ref/negara/search",
+                                    "idMethod": "1",
+                                    "method": "GET",
+                                    "params": {
+                                      "keyword": ""
+                                    },
+                                    "toData": ["negaraMuat", "negaraTransit"],
+                                    "returnData": "data"
+                                  }
+                                ]
+                              },
+                              "children": [
+                                {
+                                  "idElement": "150",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "151",
+                                      "idElementParent": "150",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "153",
+                                          "idElementParent": "151",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "ur_komoditi"
+                                          },
+                                          "children": "Komoditi"
+                                        },
+                                        {
+                                          "idElement": "154",
+                                          "idElementParent": "151",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "ur_komoditi",
+                                            "readOnly": true,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": null,
+                                            "isRequired": false
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "idElement": "152",
+                                      "idElementParent": "150",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "155",
+                                          "idElementParent": "152",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "hs_code"
+                                          },
+                                          "children": "Kode HS"
+                                        },
+                                        {
+                                          "idElement": "155",
+                                          "idElementParent": "152",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "hs_code"
+                                          },
+                                          "children": " *"
+                                        },
+                                        {
+                                          "idElement": "156",
+                                          "idElementParent": "152",
+                                          "component": "Select",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "hs_code",
+                                            "readOnly": true,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": [
+                                              "ur_komoditi",
+                                              "uraian_btki",
+                                              "uraian_barang_peraturan",
+                                              "kd_satuan",
+                                              "ur_hs_code"
+                                            ],
+                                            "function": [
+                                              "input-getOptionLabel-hs_code",
+                                              "input-getOptionValue-hs_code",
+                                              "input-onChange-onChangeSelectModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "157",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "165",
+                                      "idElementParent": "157",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "166",
+                                          "idElementParent": "165",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "uraian_btki"
+                                          },
+                                          "children": "Uraian BTKI"
+                                        },
+                                        {
+                                          "idElement": "167",
+                                          "idElementParent": "165",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "textarea",
+                                            "name": "uraian_btki",
+                                            "readOnly": true,
+                                            "rows": "2",
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": null,
+                                            "isRequired": false
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "158",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "168",
+                                      "idElementParent": "158",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "169",
+                                          "idElementParent": "168",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "uraian_barang_peraturan"
+                                          },
+                                          "children": "Uraian Barang Peraturan"
+                                        },
+                                        {
+                                          "idElement": "170",
+                                          "idElementParent": "168",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "textarea",
+                                            "name": "uraian_barang_peraturan",
+                                            "readOnly": true,
+                                            "rows": "5",
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-onChange-onChangeTextModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "159",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "171",
+                                      "idElementParent": "159",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "172",
+                                          "idElementParent": "171",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "uraian_barang_permohonan"
+                                          },
+                                          "children": "Uraian Barang Permohonan"
+                                        },
+                                        {
+                                          "idElement": "172",
+                                          "idElementParent": "171",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "uraian_barang_permohonan"
+                                          },
+                                          "children": " * "
+                                        },
+                                        {
+                                          "idElement": "173",
+                                          "idElementParent": "171",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "textarea",
+                                            "name": "uraian_barang_permohonan",
+                                            "readOnly": false,
+                                            "rows": "5",
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-onChange-onChangeTextModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "160",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "174",
+                                      "idElementParent": "160",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "176",
+                                          "idElementParent": "174",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "jumlah"
+                                          },
+                                          "children": "Jumlah"
+                                        },
+                                        {
+                                          "idElement": "176",
+                                          "idElementParent": "174",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "jumlah"
+                                          },
+                                          "children": " * "
+                                        },
+                                        {
+                                          "idElement": "177",
+                                          "idElementParent": "174",
+                                          "component": "SeparateNumber",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "jumlah",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-onChange-onChangeSeparateNumberModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "idElement": "175",
+                                      "idElementParent": "160",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "178",
+                                          "idElementParent": "175",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "kd_satuan"
+                                          },
+                                          "children": "Satuan"
+                                        },
+                                        {
+                                          "idElement": "179",
+                                          "idElementParent": "175",
+                                          "component": "Input",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "kd_satuan",
+                                            "readOnly": true,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": null,
+                                            "isRequired": false
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "161",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "180",
+                                      "idElementParent": "161",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "182",
+                                          "idElementParent": "180",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "negaraMuat"
+                                          },
+                                          "children": "Negara Muat"
+                                        },
+                                        {
+                                          "idElement": "182",
+                                          "idElementParent": "180",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "negaraMuat"
+                                          },
+                                          "children": " *"
+                                        },
+                                        {
+                                          "idElement": "183",
+                                          "idElementParent": "180",
+                                          "component": "MultiSelect",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "negaraMuat",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-getOptionLabel-Negara",
+                                              "input-getOptionValue-KodeNegara",
+                                              "input-onChange-onChangeMultiSelectModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "idElement": "181",
+                                      "idElementParent": "161",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "184",
+                                          "idElementParent": "181",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "pelabuanMuat"
+                                          },
+                                          "children": "Pelabuhan Muat"
+                                        },
+                                        {
+                                          "idElement": "184",
+                                          "idElementParent": "181",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "pelabuanMuat"
+                                          },
+                                          "children": " *"
+                                        },
+                                        {
+                                          "idElement": "185",
+                                          "idElementParent": "181",
+                                          "component": "AsyncMultiSelect",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "pelabuanMuat",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": {
+                                              "url": "ref/pelabuhan/search",
+                                              "method": "GET",
+                                              "params": null,
+                                              "returnData": "data",
+                                              "searchValue": "keyword"
+                                            },
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-getOptionLabel-Pelabuhan",
+                                              "input-getOptionValue-KodePelabuhan",
+                                              "input-onChange-onChangeMultiSelectModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "162",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "186",
+                                      "idElementParent": "162",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "188",
+                                          "idElementParent": "186",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "negaraTransit"
+                                          },
+                                          "children": "Negara Transit"
+                                        },
+                                        {
+                                          "idElement": "188",
+                                          "idElementParent": "186",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "negaraTransit"
+                                          },
+                                          "children": " *"
+                                        },
+                                        {
+                                          "idElement": "189",
+                                          "idElementParent": "186",
+                                          "component": "MultiSelect",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "negaraTransit",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-getOptionLabel-Negara",
+                                              "input-getOptionValue-KodeNegara",
+                                              "input-onChange-onChangeMultiSelectModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "idElement": "187",
+                                      "idElementParent": "162",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "190",
+                                          "idElementParent": "187",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "pelabuhanTransit"
+                                          },
+                                          "children": "Pelabuhan Transit"
+                                        },
+                                        {
+                                          "idElement": "190",
+                                          "idElementParent": "187",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "pelabuhanTransit"
+                                          },
+                                          "children": " *"
+                                        },
+                                        {
+                                          "idElement": "191",
+                                          "idElementParent": "187",
+                                          "component": "AsyncMultiSelect",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "pelabuhanTransit",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": {
+                                              "url": "ref/pelabuhan/search",
+                                              "method": "GET",
+                                              "searchValue": "keyword",
+                                              "params": null,
+                                              "returnData": "data"
+                                            },
+                                            "sendValueTo": null,
+
+                                            "function": [
+                                              "input-getOptionLabel-Pelabuhan",
+                                              "input-getOptionValue-KodePelabuhan",
+                                              "input-onChange-onChangeMultiSelectModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "163",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "194",
+                                      "idElementParent": "163",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "196",
+                                          "idElementParent": "194",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "pelabuhanBongkar"
+                                          },
+                                          "children": "Pelabuhan Bongkar"
+                                        },
+                                        {
+                                          "idElement": "196",
+                                          "idElementParent": "194",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "pelabuhanBongkar"
+                                          },
+                                          "children": " *"
+                                        },
+                                        {
+                                          "idElement": "197",
+                                          "idElementParent": "194",
+                                          "component": "AsyncMultiSelect",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "pelabuhanBongkar",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": {
+                                              "url": "ref/pelabuhan/search",
+                                              "method": "GET",
+                                              "searchValue": "keyword",
+                                              "params": null,
+                                              "returnData": "data"
+                                            },
+                                            "sendValueTo": null,
+
+                                            "function": [
+                                              "input-getOptionLabel-Pelabuhan",
+                                              "input-getOptionValue-KodePelabuhan",
+                                              "input-onChange-onChangeMultiSelectModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "idElement": "195",
+                                      "idElementParent": "163",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "198",
+                                          "idElementParent": "195",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "pelabuhanTujuan"
+                                          },
+                                          "children": "Pelabuhan Tujuan"
+                                        },
+                                        {
+                                          "idElement": "198",
+                                          "idElementParent": "195",
+                                          "component": "code",
+                                          "props": {
+                                            "for": "pelabuhanTujuan"
+                                          },
+                                          "children": " *"
+                                        },
+                                        {
+                                          "idElement": "199",
+                                          "idElementParent": "195",
+                                          "component": "AsyncMultiSelect",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "pelabuhanTujuan",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": {
+                                              "url": "ref/pelabuhan/search",
+                                              "method": "GET",
+                                              "searchValue": "keyword",
+                                              "params": null,
+                                              "returnData": "data"
+                                            },
+                                            "sendValueTo": null,
+
+                                            "function": [
+                                              "input-getOptionLabel-Pelabuhan",
+                                              "input-getOptionValue-KodePelabuhan",
+                                              "input-onChange-onChangeMultiSelectModal"
+                                            ],
+                                            "isRequired": true
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "164",
+                                  "idElementParent": "149",
+                                  "component": "Button",
+                                  "props": {
+                                    "type": "submit",
+                                    "positionGravity": "right",
+                                    "color": "primary"
+                                  },
+                                  "children": "Simpan"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "idElement": "148",
+                          "idElementParent": "147",
+                          "component": "Modal Menu",
+                          "props": {
+                            "labelMenu": "Selaras"
+                          },
+                          "children": [
+                            {
+                              "idElement": "149",
+                              "idElementParent": "148",
+                              "component": "Form",
+                              "props": {
+                                "whenCallInitFunc": null,
+                                "function": ["form-onSubmit-modal"],
+                                "initFunc": [
+                                  {
+                                    "idApi": "8",
+                                    "idElementApi": "8",
+                                    "url": "ref/komoditi/search",
+                                    "idMethod": "1",
+                                    "method": "GET",
+                                    "params": {
+                                      "keyword": ""
+                                    },
+                                    "toData": ["komoditas"],
+                                    "returnData": "data"
+                                  }
+                                ]
+                              },
+                              "children": [
+                                {
+                                  "idElement": "150",
+                                  "idElementParent": "149",
+                                  "component": "Row",
+                                  "props": null,
+                                  "children": [
+                                    {
+                                      "idElement": "152",
+                                      "idElementParent": "150",
+                                      "component": "Col",
+                                      "props": null,
+                                      "children": [
+                                        {
+                                          "idElement": "155",
+                                          "idElementParent": "152",
+                                          "component": "Label",
+                                          "props": {
+                                            "for": "komoditas"
+                                          },
+                                          "children": "Komoditas"
+                                        },
+                                        {
+                                          "idElement": "156",
+                                          "idElementParent": "152",
+                                          "component": "Select",
+                                          "props": {
+                                            "type": "text",
+                                            "name": "komoditas",
+                                            "readOnly": false,
+                                            "rows": null,
+                                            "key": null,
+                                            "onLoadOption": null,
+                                            "sendValueTo": null,
+                                            "function": [
+                                              "input-getOptionLabel-urKomoditi",
+                                              "input-getOptionValue-kodeKomoditi",
+                                              "input-onChange-onChangeSelectModal"
+                                            ],
+                                            "isRequired": true,
+                                            "onChange": {
+                                              "url": "selaras/kriteria/getPeruntukan",
+                                              "method": "GET",
+                                              "params": {
+                                                "kdValue": ":kdValue"
+                                              },
+                                              "returnData": "data",
+                                              "searchValue": null
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "idElement": "164",
+                                  "idElementParent": "149",
+                                  "component": "Dynamic",
+                                  "props": null,
+                                  "children": []
+                                },
+                                {
+                                  "idElement": "164",
+                                  "idElementParent": "149",
+                                  "component": "Button",
+                                  "props": {
+                                    "type": "submit",
+                                    "positionGravity": "right",
+                                    "color": "primary"
+                                  },
+                                  "children": "Simpan"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idHeader": "3",
+      "label": "Data Persyaratan",
+      "imgActive": "ImgDataProyekActive",
+      "imgInactive": "ImgDataProyek",
+      "isSubheader": true,
+      "headerMenu": [
+        {
+          "idForm": "5",
+          "idTemplate": "1",
+          "idSubHeader": "5",
+          "idElement": "200",
+          "isSubheader": true,
+          "label": "Data EPC",
+          "icon": null,
+          "idLevel": "8",
+          "levelJson": {
+            "idLevel": 8,
+            "idLevelParent": "3",
+            "nmLevel": "Dokumen",
+            "key": "persyaratan",
+            "tipeJson": "array",
+            "kd_layanan": "0101013"
+          },
+          "content": [
+            {
+              "idElement": "200",
+              "idElementParent": null,
+              "component": "DokumenPersyaratan",
+              "props": {
+                "whenCallInitFunc": "5",
+                "function": null,
+                "initFunc": null
+              },
+              "children": null
+            }
+          ]
+        },
+        {
+          "idForm": "14",
+          "idTemplate": "1",
+          "idSubHeader": "10",
+          "idElement": "103",
+          "isSubheader": true,
+          "idLevel": null,
+          "levelJson": null,
+          "content": [
+            {
+              "idElement": "103",
+              "idElementParent": null,
+              "component": "Row",
+              "props": {
+                "whenCallInitFunc": null,
+                "function": null,
+                "initFunc": null
+              },
+              "children": [
+                {
+                  "idElement": "104",
+                  "idElementParent": "103",
+                  "component": "Table",
+                  "tableName": "Realisasi Produksi",
+                  "idLevel": null,
+                  "props": {
+                    "keyField": "id_produksi",
+                    "bordered": false,
+                    "name": null,
+                    "isCarousel": false,
+                    "isCreate": true,
+                    "actionHeader": [
+                      {
+                        "icon": "fa-file-pdf-o",
+                        "text": null,
+                        "color": "grey",
+                        "iconOnly": true,
+                        "openModal": true
+                      },
+                      {
+                        "icon": "fa-plus",
+                        "text": null,
+                        "color": "green",
+                        "iconOnly": true,
+                        "openModal": true
+                      }
+                    ],
+                    "actionColumn": [
+                      {
+                        "icon": "fa-pencil",
+                        "color": "blue",
+                        "openModal": true
+                      },
+                      {
+                        "icon": "fa-trash",
+                        "color": "red",
+                        "openModal": false
+                      }
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "idColumnMap": "28",
+                      "idElement": "104",
+                      "idColumnList": "28",
+                      "headerTitle": "No",
+                      "dataField": "no_seri",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "29",
+                      "idElement": "104",
+                      "idColumnList": "29",
+                      "headerTitle": "Bulan",
+                      "dataField": "bulan",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "30",
+                      "idElement": "104",
+                      "idColumnList": "30",
+                      "headerTitle": "Tahun",
+                      "dataField": "tahun",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "31",
+                      "idElement": "104",
+                      "idColumnList": "31",
+                      "headerTitle": "Jumlah",
+                      "dataField": "jumlah",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "32",
+                      "idElement": "104",
+                      "idColumnList": "32",
+                      "headerTitle": "Satuan",
+                      "dataField": "satuan",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "33",
+                      "idElement": "104",
+                      "idColumnList": "33",
+                      "headerTitle": "Aksi",
+                      "dataField": "id_produksi",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": ["table-dataFormat-actionButton"]
+                    }
+                  ],
+                  "contentModal": []
+                },
+                {
+                  "idElement": "105",
+                  "idElementParent": "103",
+                  "component": "Table",
+                  "tableName": "Rencana Produksi",
+                  "idLevel": null,
+                  "props": {
+                    "keyField": "id_produksi",
+                    "bordered": false,
+                    "name": null,
+                    "isCarousel": false,
+                    "isCreate": true,
+                    "actionHeader": [
+                      {
+                        "icon": "fa-file-pdf-o",
+                        "text": null,
+                        "color": "grey",
+                        "iconOnly": true,
+                        "openModal": true
+                      },
+                      {
+                        "icon": "fa-plus",
+                        "text": null,
+                        "color": "green",
+                        "iconOnly": true,
+                        "openModal": true
+                      }
+                    ],
+                    "actionColumn": [
+                      {
+                        "icon": "fa-pencil",
+                        "color": "blue",
+                        "openModal": true
+                      },
+                      {
+                        "icon": "fa-trash",
+                        "color": "red",
+                        "openModal": false
+                      }
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "idColumnMap": "34",
+                      "idElement": "105",
+                      "idColumnList": "34",
+                      "headerTitle": "No",
+                      "dataField": "no_seri",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "35",
+                      "idElement": "105",
+                      "idColumnList": "35",
+                      "headerTitle": "Aksi",
+                      "dataField": "id_produksi",
+                      "headerAlign": "center",
+                      "dataAlign": "center",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": ["table-dataFormat-actionButton"]
+                    },
+                    {
+                      "idColumnMap": "36",
+                      "idElement": "105",
+                      "idColumnList": "36",
+                      "headerTitle": "Satuan",
+                      "dataField": "satuan",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "37",
+                      "idElement": "105",
+                      "idColumnList": "37",
+                      "headerTitle": "Jumlah",
+                      "dataField": "jumlah",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "38",
+                      "idElement": "105",
+                      "idColumnList": "38",
+                      "headerTitle": "Bulan",
+                      "dataField": "bulan",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    },
+                    {
+                      "idColumnMap": "39",
+                      "idElement": "105",
+                      "idColumnList": "39",
+                      "headerTitle": "Tahun",
+                      "dataField": "tahun",
+                      "headerAlign": "center",
+                      "dataAlign": "left",
+                      "wrapText": false,
+                      "width": "70",
+                      "function": null
+                    }
+                  ],
+                  "contentModal": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idHeader": "4",
+      "label": "Checkpoint",
+      "imgActive": "ImgCheckPointActive",
+      "imgInactive": "ImgCheckPoint",
+      "isSubheader": false,
+      "content": [
+        {
+          "idElement": "106",
+          "idElementParent": null,
+          "component": "Form",
+          "props": {
+            "whenCallInitFunc": null,
+            "function": null,
+            "initFunc": null
+          },
+          "children": [
+            {
+              "idElement": "201",
+              "idElementParent": "106",
+              "component": "Checkpoint",
+              "props": {
+                "whenCallInitFunc": null
+              },
+              "children": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
