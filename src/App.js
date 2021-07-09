@@ -1,4 +1,5 @@
 import React from "react";
+import Select from "react-select";
 import {
   Button,
   Col,
@@ -20,14 +21,7 @@ const keysToComponentMap = {
   Form: Form,
   Label: Label,
   Input: Input,
-  Select: () => (
-    <Input type="select">
-      <option disabled selected>
-        Pilih
-      </option>
-      <option>Data</option>
-    </Input>
-  ),
+  Select: Select,
   Date: () => <Input type="date" />
 };
 
@@ -40,11 +34,29 @@ const renderChildren = (children, render) => {
   }
 };
 
+const handleChange = (value, name) => {
+  alert(JSON.stringify({ name, value }));
+};
+
+const getProps = (props) => {
+  let insertedProps = {};
+
+  if (props) {
+    if (props.for) insertedProps.htmlFor = props.for;
+    if (props.name) insertedProps.name = props.name;
+    if (props.type) insertedProps.type = props.type;
+    if (props.readOnly) insertedProps.readOnly = props.readOnly;
+    if (props.onChange)
+      insertedProps.onChange = (e) => handleChange(e.target.value, props.name);
+  }
+  return insertedProps;
+};
+
 const renderer = (config) => {
   if (typeof keysToComponentMap[config.component] !== "undefined") {
     return React.createElement(
       keysToComponentMap[config.component],
-      {},
+      getProps(config.props),
       renderChildren(config.children, (child) => renderer(child))
     );
   }

@@ -126,6 +126,7 @@
                             "rows": null,
                             "key": "pelaku_usaha",
                             "onLoadOption": null,
+                            "onChange": null,
                             "sendValueTo": null,
                             "function": null,
                             "isRequired": false
@@ -900,6 +901,7 @@
                             "readOnly": false,
                             "rows": null,
                             "key": "umum",
+                            "onChange": true,
                             "onLoadOption": null,
                             "sendValueTo": null,
                             "function": ["input-onChange-onChangeText"],
